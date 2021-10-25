@@ -1,0 +1,174 @@
+:root {
+    --main: #44c5f0;
+    --alt1: #fae791;
+    --alt2: #9eabb3;
+    --dacc: #222;
+    --lacc: #fff;
+
+    --topnav-height: 100px;
+    --topnav-padding: 2em;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.4em;
+    line-height: 1.15;
+    color: var(--dacc);
+
+    background: var(--dacc)
+}
+
+#topnav {
+    display: flex;
+    justify-content: space-around;
+
+    padding: var(--topnav-padding);
+
+    height: var(--topnav-height);
+    width: calc(100% - 2 * var(--topnav-padding));
+
+    background: var(--alt1);
+
+    z-index: 2;
+}
+#topnav img {
+    height: 100%;
+}
+
+#scroll-decal {
+    width: 100%;
+    /* height changed in javascript */
+    overflow: hidden;
+}
+#scroll-decal::after {
+    /* add blur to top */
+    box-shadow: inset 0 75px 50px -25px var(--alt1);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: calc(var(--topnav-height) + 2 * var(--topnav-padding));
+    width: 100%;
+}
+#scroll-decal .layer {
+    position: absolute;
+    top: calc(var(--topnav-height) + 2 * var(--topnav-padding));
+    left: 0;
+
+    overflow: hidden;
+
+    width: 100%;
+    z-index: -1;
+}
+#scroll-decal #cliff {
+    width: 120%;
+    left: -10%;
+}
+
+article {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.dual-content {
+    display: flex;
+    background: var(--lacc);
+
+    justify-content: space-around;
+    align-items: center;
+
+    width: 70%;
+    padding: 2em;
+    margin: 2em;
+
+    border-radius: 20px 30%;
+}
+.dual-content img {
+    width: 20%;
+    image-rendering: pixelated;
+}
+.dual-content p {
+    width: 50%;
+}
+.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+iframe {
+    margin: 40px;
+}
+
+.quotes {
+    display: grid;
+
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 2fr;
+
+    width: 70%;
+    
+    color: var(--dacc);
+    font-size: large;
+}
+.quotes .quote {
+    padding: 0 20px;
+    margin: 20px;
+    border-radius: 30px;
+    background: var(--lacc);   
+    border-radius: 30px 30px 30px 30px;
+}
+.quotes .quote.one {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+}
+.quotes .quote.two {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+}
+.quotes .quote.three {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+}
+.quotes p {
+    font-size: larger;
+}
+.quotes .quoter {
+    color: var(--main);
+    font-size: medium;
+
+    text-align: right;
+}
+.other-platforms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    padding: 20vh;
+}
+.other-platforms .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    width: 100%;
+}
+.other-platforms .buttons a {
+    padding: 10px;
+    border-radius: 15px;
+}
+.other-platforms h1 {
+    font-size: xx-large;
+
+    width: 100%;
+    text-align: center;
+
+    padding: 1em;
+    color: var(--lacc);
+}
