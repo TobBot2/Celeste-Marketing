@@ -74,7 +74,50 @@ article {
     flex-direction: column;
     align-items: center;
 }
+.two-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
+    width: 75%;
+}
+.two-column p{
+    width: 42%;
+
+    background: var(--lacc);
+    padding: 20px;
+    border-radius: 15px;
+}
+.gallery {
+    width: 70%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 35% 35% 15px 15px;
+    background: var(--lacc);
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 2fr 1fr;
+
+    justify-content: center;
+    align-items: stretch;
+}
+.gallery img {
+    max-height: 300px;
+    image-rendering: pixelated;
+    justify-self: center;
+}
+.container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--lacc);
+    padding: 20px;
+    border-radius: 15px;
+}
 .dual-content {
     display: flex;
     background: var(--lacc);
