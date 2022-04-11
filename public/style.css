@@ -1,217 +1,160 @@
 :root {
-    --main: #44c5f0;
-    --alt1: #fae791;
-    --alt2: #9eabb3;
-    --dacc: #222;
-    --lacc: #fff;
-
-    --topnav-height: 100px;
-    --topnav-padding: 2em;
+    --acol: #B94140;
+    --lcol: #F1F5F5;
+    --dcol: #2D3A43;
 }
+/* #region body & topnav stuff */
 body {
     margin: 0;
     overflow-x: hidden;
 
     font-family: 'Montserrat', Arial, sans-serif;
-    font-weight: bold;
-    font-size: 1.4em;
-    line-height: 1.15;
-    color: var(--dacc);
+    font-weight: normal;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    
+    color: var(--dcol);
+    background: var(--lcol)
+}
+a img {
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: var(--acol);
 
-    background: var(--dacc)
+    overflow: hidden;
 }
 
 #topnav {
     display: flex;
-    justify-content: space-around;
-
-    padding: var(--topnav-padding);
-
-    height: var(--topnav-height);
-    width: calc(100% - 2 * var(--topnav-padding));
-
-    background: var(--alt1);
-
+    align-items:flex-start;
+    
+    font-weight: bold;
+    font-size: 1.4em;
+    
+    padding: 1em;
+    
+    background: var(--dcol);
+    
     z-index: 2;
 }
 #topnav img {
     height: 100%;
 }
-
-#scroll-decal {
-    width: 100%;
-    /* height changed in javascript */
-    overflow: hidden;
+#topnave a:first-child {
+    display: flex;
+    align-self: flex-start;
 }
-#scroll-decal::after {
-    /* add blur to top */
-    box-shadow: inset 0 75px 50px -25px var(--alt1);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: calc(var(--topnav-height) + 2 * var(--topnav-padding));
-    width: 100%;
-}
-#scroll-decal .layer {
-    position: absolute;
-    top: calc(var(--topnav-height) + 2 * var(--topnav-padding));
-    left: 0;
+#topnav a {
+    display: flex;
+    align-self:flex-end;
+    color: var(--lcol);
 
-    overflow: hidden;
-
-    width: 100%;
-    z-index: -1;
+    margin: 0 2em;
 }
-#scroll-decal #cliff {
-    width: 120%;
-    left: -10%;
+a:visited {
+    color: var(--acol);
 }
-
+/* #endregion */
 article {
     display: flex;
 
     flex-direction: column;
     align-items: center;
 }
-.two-column {
+article a {
+    font-weight: bold;
+    color: var(--dcol);
+}
+article .img-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    height: min(min-content, 500px);
+}
+article .img-container img {
+    height: inherit;
+}
+article h1 {
+    margin-bottom: 5px;
+}
+.container {
+    width: 70%;
+    max-width: 40em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--lcol);
+    padding: 20px;
+    border-radius: 15px;
+}
+.container p {
+    margin-top: 0;
+    text-indent: 2em;
+}
+.aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: var(--dcol);
+    color: var(--lcol);
+
+    width: 50%;
+    padding: 2em 25%;
+}
+.aside a {
+    color: var(--lcol);
+}
+article .side-by-side {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-    width: 75%;
-}
-.two-column p{
-    width: 42%;
+    width: 100%;
 
-    background: var(--lacc);
-    padding: 20px;
-    border-radius: 15px;
+    align-items: center;
 }
-.gallery {
-    width: 70%;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 35% 35% 15px 15px;
-    background: var(--lacc);
-
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 2fr 1fr;
-
-    justify-content: center;
-    align-items: stretch;
-}
-.gallery img {
+article .side-by-side img {
     max-height: 300px;
-    image-rendering: pixelated;
-    justify-self: center;
 }
-.container {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+article .side-by-side p {
+    max-width: 20em;
 
-    background: var(--lacc);
+    align-self:flex-start;
+    justify-self:flex-start;
+}
+
+article .img-gallery {
+    width: 70%;
     padding: 20px;
-    border-radius: 15px;
-}
-.dual-content {
-    display: flex;
+    margin: 20px;
     background: var(--lacc);
 
-    justify-content: space-around;
-    align-items: center;
-
-    width: 70%;
-    padding: 2em;
-    margin: 2em;
-
-    border-radius: 20px 30%;
-}
-.dual-content img {
-    width: 20%;
-    image-rendering: pixelated;
-}
-.dual-content p {
-    width: 50%;
-}
-.vertical {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-iframe {
-    margin: 40px;
-}
-
-.quotes {
-    display: grid;
-
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 2fr 1fr 2fr;
-
-    width: 70%;
-    
-    color: var(--dacc);
-    font-size: large;
-}
-.quotes .quote {
-    padding: 0 20px;
-    margin: 20px;
-    border-radius: 30px;
-    background: var(--lacc);   
-    border-radius: 30px 30px 30px 30px;
-}
-.quotes .quote.one {
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 1;
-}
-.quotes .quote.two {
-    grid-column: 2 / span 2;
-    grid-row: 2 / span 1;
-}
-.quotes .quote.three {
-    grid-column: 1 / span 2;
-    grid-row: 3 / span 1;
-}
-.quotes p {
-    font-size: larger;
-}
-.quotes .quoter {
-    color: var(--main);
-    font-size: medium;
-
-    text-align: right;
-}
-.other-platforms {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 50%;
-    padding: 20vh;
-}
-.other-platforms .buttons {
     display: flex;
     flex-direction: row;
+
     justify-content: space-around;
-
-    width: 100%;
+    align-items: center;
 }
-.other-platforms .buttons a {
-    padding: 10px;
-    border-radius: 15px;
+article .img-gallery img {
+    max-width: 300px;
+    max-height: 300px;
+    justify-self: center;
 }
-.other-platforms h1 {
-    font-size: xx-large;
 
-    width: 100%;
-    text-align: center;
+article .god {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+article .god img {
+    background: var(--dcol);
+    padding: 5px 50vw;
 
-    padding: 1em;
-    color: var(--lacc);
+    max-height: 400px;
 }
